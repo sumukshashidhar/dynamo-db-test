@@ -13,10 +13,8 @@ dynamodb = boto3.client("dynamodb", region_name="ap-south-1", aws_access_key_id=
 response = dynamodb.describe_table(TableName="TEST_TABLE")
 print(response["Table"])
 
-response2 = dynamodb.get_item(
+response2 = dynamodb.query(
         TableName="TEST_TABLE",
-        Key={
-            }
         )
 
 print(response2)
